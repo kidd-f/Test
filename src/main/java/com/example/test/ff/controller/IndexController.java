@@ -17,7 +17,8 @@ public class IndexController {
     public String index(){
 
         indexService.index();
-
-        return "hello";
+        long currentTime = System.currentTimeMillis();
+        String res = String.valueOf(currentTime);
+        return res;
     }
 }

@@ -11,7 +11,6 @@ public class IndexServiceImpl implements IndexService {
         int b = 4;
         long start = System.currentTimeMillis();
         long end = start + b * 1000;
-        System.out.println(end);
 
         while (true) {
             new Thread(new Runnable() {
