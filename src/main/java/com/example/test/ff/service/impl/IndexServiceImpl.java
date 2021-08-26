@@ -8,7 +8,7 @@ public class IndexServiceImpl implements IndexService {
 
     @Override
     public void index() {
-        int b = 3;
+        int b = 4;
         long start = System.currentTimeMillis();
         long end = start + b * 1000;
 
