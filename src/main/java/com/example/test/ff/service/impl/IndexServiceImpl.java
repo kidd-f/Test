@@ -8,11 +8,14 @@ public class IndexServiceImpl implements IndexService {
 
     @Override
     public void index() {
-        int b = 4;
+        int b = 3;
         long start = System.currentTimeMillis();
         long end = start + b * 1000;
 
-        while (true) {
+        int nThreads = Runtime.getRuntime().availableProcessors();
+        System.out.println(nThreads);
+
+        for(int i = 0; i < nThreads; i++){
             new Thread(new Runnable() {
                 int a;
                 @Override
@@ -30,5 +33,6 @@ public class IndexServiceImpl implements IndexService {
                 break;
             }
         }
+
     }
 }
