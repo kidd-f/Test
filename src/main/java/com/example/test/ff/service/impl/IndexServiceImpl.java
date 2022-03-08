@@ -4,8 +4,6 @@ import com.example.test.ff.dto.MemoryDto;
 import com.example.test.ff.service.IndexService;
 import org.springframework.stereotype.Service;
 
-import java.lang.ref.WeakReference;
-import java.util.HashMap;
 import java.util.WeakHashMap;
 
 @Service
@@ -13,9 +11,9 @@ public class IndexServiceImpl implements IndexService {
 
     @Override
     public void index() {
-        int b = 3;
-        long start = System.currentTimeMillis();
-        long end = start + b * 1000;
+//        int b = 3;
+//        long start = System.currentTimeMillis();
+//        long end = start + b * 1000;
 
         int nThreads = Runtime.getRuntime().availableProcessors();
         System.out.println(nThreads);
@@ -27,16 +25,11 @@ public class IndexServiceImpl implements IndexService {
                 public void run() {
                     while (true){
                         a++;
-                        if(System.currentTimeMillis() >= end){
-                            break;
-                        }
                     }
 
                 }
             }).start();
-            if(System.currentTimeMillis() >= end){
-                break;
-            }
+
         }
 
     }
@@ -61,10 +54,10 @@ public class IndexServiceImpl implements IndexService {
             map.put(i++,ob);
         }
 //        System.out.println(rt.freeMemory());
-        map.clear();
-        map = null;
-        System.gc();
-        System.runFinalization();
+//        map.clear();
+//        map = null;
+//        System.gc();
+//        System.runFinalization();
         System.out.println("finished");
         return memoryDto.toString();
 
