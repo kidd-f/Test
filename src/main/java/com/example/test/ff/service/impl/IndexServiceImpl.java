@@ -4,7 +4,7 @@ import com.example.test.ff.dto.MemoryDto;
 import com.example.test.ff.service.IndexService;
 import org.springframework.stereotype.Service;
 
-import java.util.WeakHashMap;
+import java.util.HashMap;
 
 @Service
 public class IndexServiceImpl implements IndexService {
@@ -45,7 +45,7 @@ public class IndexServiceImpl implements IndexService {
         memoryDto.setTotal(total);
         memoryDto.setMax(max);
 
-        WeakHashMap map = new WeakHashMap();
+        HashMap map = new HashMap();
         long size = 35;
         int num = Integer.parseInt(String.valueOf(max/size));
 
