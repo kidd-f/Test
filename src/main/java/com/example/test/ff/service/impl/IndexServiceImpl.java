@@ -45,9 +45,10 @@ public class IndexServiceImpl implements IndexService {
         memoryDto.setTotal(total);
         memoryDto.setMax(max);
 
-        HashMap map = new HashMap();
         long size = 35;
         int num = Integer.parseInt(String.valueOf(max/size));
+
+        HashMap map = new HashMap(num);
 
         for(int i = 0; i<= num; i++){
             Object ob = new Object();
