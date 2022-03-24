@@ -11,6 +11,8 @@ public class IndexController {
     @Autowired
     IndexService indexService;
 
+    /**占用cpu
+     */
     @GetMapping("/index")
     public String index(){
 
